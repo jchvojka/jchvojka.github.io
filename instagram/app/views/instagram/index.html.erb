@@ -1,3 +1,17 @@
-<h1>Instagram App</h1>
+<h1>ConsumerAffairs Instagram Photos</h1>
 
-<p>Words</p>
+<p>This an example of using the Instagram API within the Rails framework</p>
+
+<% @instagram.each do |instagram| %>
+
+  <% if instagram.tags.include?("consumeraffairs") %>
+    <%= image_tag instagram.images.standard_resolution.url %>
+    <br>
+    <p>Caption:</p>
+    <%=instagram.caption.text%>
+    <br>
+    <hr>
+
+  <% end %>
+
+<% end %>
