@@ -1,7 +1,21 @@
 <h1>ConsumerAffairs Instagram Photos</h1>
 
-<p>This an example of using the Instagram API within the Rails framework</p>
+<p>This an example of using the Instagram API within the Rails framework.
 
+These pictures are loaded into a database using the Instagram API.</p>
+
+<% @photos.each do |photo| %>
+
+    <%= image_tag photo.data %>
+    <br>
+    <p><b>Caption:</b></p>
+    <%=photo.text%>
+    <br>
+    <hr>
+
+<% end %>
+
+<!-- Example of loading photos pulled straight from Instagram
 <% @instagram.each do |instagram| %>
 
   <% if instagram.tags.include?("consumeraffairs") %>
@@ -14,4 +28,4 @@
 
   <% end %>
 
-<% end %>
+<% end %>-->
